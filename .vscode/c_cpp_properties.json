@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/infer",
+                "/home/stu/code/llama.cpp/include",
+                "/home/stu/code/llama.cpp/ggml/include",
+                "/home/stu/code/llama.cpp/common",
+                "/home/stu/code/llama.cpp/vendor/nlohmann"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
