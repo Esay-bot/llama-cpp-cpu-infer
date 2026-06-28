@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(
     ${PROJECT_SOURCE_DIR}/infer
+    ${PROJECT_SOURCE_DIR}/thirdparty
     /home/stu/code/llama.cpp/include
     /home/stu/code/llama.cpp/ggml/include
     /home/stu/code/llama.cpp/common
@@ -17,9 +18,13 @@ link_directories(
 )
 
 aux_source_directory(infer INFER_SRC)
-add_executable(main main.cpp ${INFER_SRC})
 
-target_link_libraries(main
+# 控制台程序
+add_executable(main main.cpp ${INFER_SRC})
+# HTTP服务程序
+add_executable(http_server http_server.cpp ${INFER_SRC})
+
+set(LINK_LIBS
     llama
     ggml
     ggml-base
@@ -30,3 +35,6 @@ target_link_libraries(main
     dl
     m
 )
+
+target_link_libraries(main ${LINK_LIBS})
+target_link_libraries(http_server ${LINK_LIBS})

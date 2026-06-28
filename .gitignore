@@ -1,1 +1,18 @@
+cat > .gitignore << EOF
+# 编译构建目录
 build/
+
+# 日志文件
+*.log
+
+# VSCode配置
+.vscode/
+
+# 模型权重文件
+*.gguf
+*.bin
+*.pth
+
+# 系统隐藏文件
+.DS_Store
+EOF
